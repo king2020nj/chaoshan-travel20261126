@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#a05a2c">
+<title>潮汕 · 五日 · 旅行手册</title>
+<style>
+:root{
+  --bg:#f6efe3; --card:#fffdf8; --line:#e6dcc8;
+  --ink:#3f3428; --ink-soft:#8a7a63;
+  --accent:#a05a2c; --accent-deep:#7c4520; --wash:#f3e7d3;
+  --ok:#4a8c5f; --ok-wash:#e7f2e9;
+  --warn:#b5432e; --warn-wash:#f7e6df;
+  --pill:#f7e9c9; --pill-ink:#946f1d;
+  --d1:#b06a3b; --d2:#7d9752; --d3:#4c7a99; --d4:#3a63a8; --d5:#c2913a;
+  --sea:#dfe9e2; --land:#efe6d4;
+  --shadow:0 1px 8px rgba(63,52,40,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#191512; --card:#241f19; --line:#3a3228;
+    --ink:#ece4d6; --ink-soft:#a4947c;
+    --accent:#d08a4e; --accent-deep:#b96f35; --wash:#2e2620;
+    --ok:#6fb382; --ok-wash:#1f2e22;
+    --warn:#e0705a; --warn-wash:#31201b;
+    --pill:#332a17; --pill-ink:#d3a94e;
+    --d1:#cf8a55; --d2:#9ab56e; --d3:#6da3c4; --d4:#6c93d6; --d5:#d9ab52;
+    --sea:#1e2622; --land:#2a241c;
+    --shadow:0 1px 8px rgba(0,0,0,.45);
+  }
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;padding-bottom:70px}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+
+/* ===== Hero ===== */
+.hero{position:relative;overflow:hidden;border-radius:0 0 30px 30px}
+.hero svg{display:block;width:100%;height:auto}
+
+/* ===== 吸顶导航 ===== */
+nav{position:sticky;top:0;z-index:50;background:rgba(246,239,227,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+@media (prefers-color-scheme: dark){ nav{background:rgba(25,21,18,.9)} }
+nav .inner{max-width:760px;margin:0 auto;display:flex;gap:8px;padding:9px 12px;overflow-x:auto;scrollbar-width:none}
+nav .inner::-webkit-scrollbar{display:none}
+nav a{flex:0 0 auto;text-decoration:none;color:var(--ink-soft);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 16px;font-size:13.5px;font-weight:600;transition:all .15s}
+nav a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* ===== 章节标题 ===== */
+.sec{display:flex;align-items:center;gap:12px;margin:36px 0 16px}
+.secno{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sec h2{font-size:20px;letter-spacing:.05em;white-space:nowrap}
+.sec::after{content:"";flex:1;border-top:2px dashed var(--line)}
+
+/* ===== 此刻关注 ===== */
+.now{background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:20px 18px;margin-top:18px}
+.now .lab{font-size:12.5px;color:var(--accent);font-weight:700;letter-spacing:.12em;margin-bottom:10px}
+.now .ev{font-size:16.5px;font-weight:700;line-height:1.5}
+.now .evtime{font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+.cd-grid{display:flex;gap:10px;margin-top:14px}
+.cd-cell{flex:1;background:var(--wash);border-radius:14px;text-align:center;padding:12px 0 10px}
+.cnum{font-size:38px;font-weight:800;color:var(--accent-deep);line-height:1.1;font-variant-numeric:tabular-nums}
+.clab{font-size:12px;color:var(--ink-soft);margin-top:2px}
+.now .hint{font-size:12px;color:var(--ink-soft);margin-top:12px;text-align:center}
+
+/* ===== 卡片 ===== */
+.card{background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:18px 16px;margin:14px 0}
+.grp{font-size:16px;font-weight:750;margin:18px 0 10px;display:flex;align-items:center;gap:8px}
+.grp:first-child{margin-top:0}
+.grp small{font-size:12px;color:var(--ink-soft);font-weight:600}
+
+/* ===== 大时间对比卡 ===== */
+.fl{border:1px solid var(--line);border-radius:16px;padding:14px 14px 12px;margin-bottom:12px;background:var(--card)}
+.fl-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.fl-head .no{font-weight:750;font-size:15px}
+.fl-head .dt{color:var(--ink-soft);font-size:13px;margin-left:auto}
+.fl-row{display:flex;align-items:center;gap:6px;margin-top:8px}
+.fl-big{font-size:30px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.15}
+.fl-side{flex:1;text-align:center}
+.fl-air{font-size:12.5px;color:var(--ink-soft);font-weight:600}
+.fl-mid{flex:1.4;text-align:center}
+.fl-dash{color:var(--ink-soft);font-size:13px;letter-spacing:2px;margin:2px 0}
+.fl-dur{font-size:12px;color:var(--ink-soft)}
+.fl-note{font-size:12.5px;color:var(--ink-soft);border-top:1px dashed var(--line);margin-top:10px;padding-top:8px}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;border-radius:999px;padding:2px 11px;background:var(--pill);color:var(--pill-ink);white-space:nowrap}
+.pill.warn{background:var(--warn-wash);color:var(--warn)}
+.pill.grey{background:var(--wash);color:var(--ink-soft)}
+
+/* ===== 总览地图 ===== */
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:10px;font-size:12.5px;color:var(--ink-soft)}
+.legend i{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-right:5px}
+.cap{font-size:12px;color:var(--ink-soft);margin-top:8px}
+
+/* ===== 逐日折叠卡 ===== */
+.day{background:var(--card);border-radius:20px;box-shadow:var(--shadow);margin:14px 0;overflow:hidden}
+.day summary{list-style:none;cursor:pointer;padding:16px 16px;user-select:none}
+.day summary::-webkit-details-marker{display:none}
+.dgrid{display:flex;align-items:center;gap:14px}
+.dbadge{flex:0 0 auto;width:52px;height:52px;border-radius:16px;color:#fff;font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center}
+.dmeta{font-size:12px;color:var(--ink-soft);font-weight:650}
+.dtitle{font-size:16.5px;font-weight:750;line-height:1.4}
+.dsub{font-size:12.5px;color:var(--ink-soft);margin-top:1px}
+.darrow{margin-left:auto;color:var(--ink-soft);transition:transform .15s;flex:0 0 auto}
+.day[open] .darrow{transform:rotate(90deg)}
+.day .inner{border-top:1px dashed var(--line);padding:14px 16px 16px}
+.daymap summary{cursor:pointer;list-style:none;font-size:13.5px;color:var(--accent);font-weight:700;padding:2px 0 8px;user-select:none}
+.daymap summary::-webkit-details-marker{display:none}
+.daymap summary::before{content:"▸ ";display:inline-block}
+.daymap[open] .daymap summary::before{}
+.daymap[open] summary::before{transform:rotate(90deg)}
+.wx{display:flex;align-items:center;gap:10px;margin:4px 0 12px;border:1px dashed var(--line);border-radius:12px;padding:9px 14px;font-size:13px;color:var(--ink-soft);background:var(--bg-soft,transparent)}
+.wx .wxic{font-size:20px;line-height:1}
+.wx b{color:var(--ink)}
+.wx .wxerr{opacity:.75}
+
+/* ===== 时间轴 ===== */
+.seg{display:flex;gap:12px;padding:10px 0;border-top:1px dashed var(--line)}
+.seg:first-of-type{border-top:none}
+.seg-time{flex:0 0 76px;text-align:right;font-size:12.5px;color:var(--ink-soft);font-weight:700;padding-top:2px}
+.seg-body{flex:1;min-width:0}
+.seg-name{font-weight:700;font-size:14.5px}
+.act{padding:6px 0}
+.act .a-t{font-size:14.5px}
+.act .a-note{font-size:12.5px;color:var(--ink-soft);margin-top:1px}
+a.pl{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--accent);cursor:pointer}
+a.pl::after{content:" 🗺";font-size:11px;opacity:.7}
+.warnline{background:var(--warn-wash);color:var(--warn);border-radius:12px;padding:9px 12px;font-size:13px;margin-top:8px}
+.food{font-size:12.5px;color:var(--ink-soft);margin-top:8px}
+.food b{color:var(--pill-ink);font-weight:700}
+
+/* ===== 待办 ===== */
+.todo li{list-style:none;padding:12px 0 12px 34px;position:relative;border-bottom:1px dashed var(--line)}
+.todo li:last-child{border-bottom:none}
+.todo li::before{content:"";position:absolute;left:4px;top:17px;width:15px;height:15px;border:2px solid var(--accent);border-radius:50%}
+.td-name{font-weight:700;font-size:14.5px}
+.td-note{font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+
+/* ===== 贴士 ===== */
+.tipgrp{padding:12px 0;border-bottom:1px dashed var(--line)}
+.tipgrp:last-child{border-bottom:none}
+.tipgrp .tg{font-size:14.5px;font-weight:750;margin-bottom:4px}
+.tipgrp p{font-size:13.5px;color:var(--ink);line-height:1.7}
+.tipgrp p b{color:var(--accent)}
+.foot{text-align:center;font-size:11.5px;color:var(--ink-soft);margin-top:38px}
+@media (max-width:480px){
+  .cnum{font-size:30px}
+  .fl-big{font-size:24px}
+  .seg-time{flex-basis:64px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO（内嵌手绘场景，零外部资源） ================= -->
+<div class="hero">
+<svg viewBox="0 0 680 430" preserveAspectRatio="xMidYMid slice" role="img" aria-label="潮汕旅行手册封面">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8d9a8"/><stop offset=".55" stop-color="#eeb26e"/><stop offset="1" stop-color="#d98d5f"/>
+    </linearGradient>
+    <linearGradient id="seaG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7fae9e"/><stop offset="1" stop-color="#4f7f74"/>
+    </linearGradient>
+  </defs>
+  <rect width="680" height="430" fill="url(#sky)"/>
+  <circle cx="540" cy="120" r="46" fill="#fbe9c8" opacity=".9"/>
+  <circle cx="540" cy="120" r="60" fill="none" stroke="#fbe9c8" stroke-width="2" stroke-dasharray="3 9" opacity=".8"/>
+  <path d="M0 250 C90 200 170 230 260 214 C360 196 430 236 520 220 C590 208 640 226 680 218 L680 430 L0 430 Z" fill="#c77e55" opacity=".8"/>
+  <g fill="#8a4f33" opacity=".92">
+    <rect x="40" y="238" width="52" height="70"/>
+    <rect x="100" y="226" width="44" height="82"/>
+    <rect x="152" y="244" width="58" height="64"/>
+    <rect x="218" y="232" width="40" height="76"/>
+  </g>
+  <g fill="#f8d9a8" opacity=".85">
+    <rect x="52" y="252" width="12" height="14"/><rect x="74" y="252" width="12" height="14"/>
+    <rect x="110" y="240" width="11" height="13"/><rect x="128" y="240" width="11" height="13"/>
+    <rect x="164" y="258" width="12" height="14"/><rect x="186" y="258" width="12" height="14"/>
+    <rect x="228" y="246" width="10" height="12"/>
+  </g>
+  <path d="M0 308 L680 308 L680 430 L0 430 Z" fill="url(#seaG)"/>
+  <g stroke="#f6efe3" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".75">
+    <path d="M60 340 q18 -8 36 0 q18 8 36 0"/>
+    <path d="M420 356 q18 -8 36 0 q18 8 36 0"/>
+    <path d="M210 382 q18 -8 36 0 q18 8 36 0"/>
+    <path d="M540 396 q18 -8 36 0 q18 8 36 0"/>
+    <path d="M120 410 q18 -8 36 0 q18 8 36 0"/>
+  </g>
+  <g transform="translate(596 236)">
+    <path d="M0 72 L10 10 L22 10 L32 72 Z" fill="#f6efe3"/>
+    <rect x="8" y="0" width="16" height="12" fill="#b5432e"/>
+    <circle cx="16" cy="6" r="4" fill="#fbe9c8"/>
+    <rect x="-2" y="72" width="36" height="7" fill="#8a4f33"/>
+    <path d="M16 -14 L4 4 L28 4 Z" fill="#b5432e"/>
+  </g>
+  <g transform="translate(300 372)" opacity=".9">
+    <path d="M0 14 L54 14 L44 24 L10 24 Z" fill="#5c3a26"/>
+    <rect x="20" y="2" width="14" height="12" fill="#f6efe3"/>
+  </g>
+  <path d="M60 90 C180 40 320 44 470 96" fill="none" stroke="#fffdf8" stroke-width="2.6" stroke-dasharray="2 10" stroke-linecap="round" opacity=".9"/>
+  <path d="M470 96 l-18 -4 l8 10 z" fill="#fffdf8"/>
+  <text x="46" y="86" font-size="13" fill="#fffdf8" letter-spacing="6" opacity=".92" font-weight="600">NANJING → XIAMEN → CHAOZHOU → SHANTOU</text>
+  <text x="42" y="150" font-size="64" fill="#fffdf8" font-weight="800" letter-spacing="2" style="font-family:'Avenir Next','PingFang SC',sans-serif">CHAOSHAN</text>
+  <text x="46" y="196" font-size="30" fill="#fffdf8" font-weight="750" letter-spacing="14">潮汕 · 五日</text>
+  <text x="46" y="266" font-size="14" fill="#fffdf8" opacity=".95" font-weight="600">2026.11.26 – 11.30 · 双人 · 古城 · 海岛 · 美食</text>
+</svg>
+</div>
+
+<!-- ================= 吸顶导航 ================= -->
+<nav><div class="inner">
+  <a href="#sec-now" data-sec="sec-now">关注</a>
+  <a href="#sec-map" data-sec="sec-map">总览</a>
+  <a href="#sec-book" data-sec="sec-book">预订</a>
+  <a href="#sec-days" data-sec="sec-days">逐日</a>
+  <a href="#sec-todo" data-sec="sec-todo">待办</a>
+  <a href="#sec-tips" data-sec="sec-tips">贴士</a>
+</div></nav>
+
+<div class="wrap">
+
+<!-- ================= 壹 · 此刻关注 ================= -->
+<div class="sec" id="sec-now"><span class="secno">壹</span><h2>此刻关注</h2></div>
+<div class="now">
+  <div class="lab">出 发 倒 计 时</div>
+  <div class="ev" id="cdname">—</div>
+  <div class="evtime" id="cdwhen"></div>
+  <div class="cd-grid">
+    <div class="cd-cell"><div class="cnum" id="cdd">0</div><div class="clab">天</div></div>
+    <div class="cd-cell"><div class="cnum" id="cdh">00</div><div class="clab">时</div></div>
+    <div class="cd-cell"><div class="cnum" id="cdm">00</div><div class="clab">分</div></div>
+    <div class="cd-cell"><div class="cnum" id="cds">00</div><div class="clab">秒</div></div>
+  </div>
+  <div class="hint" id="cdhint"></div>
+</div>
+
+<!-- ================= 贰 · 行程总览 ================= -->
+<div class="sec" id="sec-map"><span class="secno">贰</span><h2>行程总览</h2></div>
+<div class="card map-wrap">
+<svg viewBox="0 0 680 520" width="100%" role="img" aria-label="行程手绘示意图">
+  <g transform="translate(636 44)">
+    <circle r="20" fill="var(--card)" stroke="var(--line)" stroke-width="1.5"/>
+    <path d="M0 -12 L5 6 L0 2 L-5 6 Z" fill="var(--accent)"/>
+    <text y="-24" font-size="11" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">北</text>
+  </g>
+  <path d="M680 60 C620 90 600 150 610 210 C596 260 570 300 588 360 C570 420 590 470 640 520 L680 520 Z" fill="var(--sea)" opacity="0.85"/>
+  <path d="M250 520 C280 460 320 430 360 430 C420 430 470 470 500 520 Z" fill="var(--sea)" opacity="0.5"/>
+  <path d="M610 60 C580 100 600 150 575 190 C555 230 520 250 505 290 C488 330 470 350 452 372 C430 400 400 430 380 470" fill="none" stroke="var(--ink-soft)" stroke-width="1.6" stroke-dasharray="7 5" opacity=".55" stroke-linecap="round"/>
+  <path d="M535 300 C545 282 575 278 596 292 C612 304 612 322 598 336 C580 352 550 350 538 336 C528 324 528 312 535 300 Z" fill="var(--land)" stroke="var(--ink-soft)" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="566" y="266" font-size="13" fill="var(--ink)" text-anchor="middle" transform="rotate(-3 566 266)" font-weight="700">南澳岛</text>
+  <path d="M400 130 C408 112 440 108 460 118 C476 126 478 146 464 158 C446 172 414 170 404 156 C396 146 396 140 400 130 Z" fill="var(--land)" stroke="var(--ink-soft)" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="432" y="98" font-size="13" fill="var(--ink)" text-anchor="middle" transform="rotate(-2 432 98)" font-weight="700">厦门</text>
+  <path d="M420 250 C430 280 448 310 460 340 C470 365 478 385 484 405" fill="none" stroke="var(--sea)" stroke-width="7" opacity="0.9" stroke-linecap="round"/>
+  <text x="436" y="238" font-size="11" fill="var(--ink-soft)" transform="rotate(60 436 238)">韩江</text>
+
+  <path d="M130 70 C220 60 320 70 408 118" fill="none" stroke="var(--d1)" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round"/>
+  <text x="240" y="52" font-size="12" fill="var(--d1)" font-weight="700">D1 ✈ 南京 → 厦门</text>
+  <path d="M448 128 C436 140 420 150 412 152 C424 162 444 164 456 152 C462 144 458 134 448 128" fill="none" stroke="var(--d1)" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M430 168 C420 220 395 260 372 316" fill="none" stroke="var(--d2)" stroke-width="3" stroke-linecap="round"/>
+  <text x="330" y="200" font-size="12" fill="var(--d2)" font-weight="700" transform="rotate(-68 330 200)">D2 🚄</text>
+  <path d="M372 316 C382 316 392 312 400 306" fill="none" stroke="var(--d2)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M404 302 C396 308 384 312 374 316 C396 342 440 368 470 376" fill="none" stroke="var(--d3)" stroke-width="3" stroke-linecap="round"/>
+  <text x="392" y="352" font-size="12" fill="var(--d3)" font-weight="700">D3 🚄</text>
+  <path d="M470 376 C458 380 448 384 442 390" fill="none" stroke="var(--d3)" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M486 378 C510 362 528 350 544 334 C560 322 572 312 584 306" fill="none" stroke="var(--d4)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M584 306 C594 314 588 328 574 336 C560 344 548 344 544 334" fill="none" stroke="var(--d4)" stroke-width="2.4" stroke-dasharray="5 4" stroke-linecap="round"/>
+  <text x="530" y="372" font-size="12" fill="var(--d4)" font-weight="700">D4 🛵</text>
+  <path d="M492 388 C452 384 412 366 382 340 C360 322 340 290 330 262" fill="none" stroke="var(--d5)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M322 254 C240 220 160 140 122 82" fill="none" stroke="var(--d5)" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round"/>
+  <text x="250" y="240" font-size="12" fill="var(--d5)" font-weight="700">D5 ✈ 返程</text>
+
+  <g font-size="13" fill="var(--ink)" font-weight="700">
+    <circle cx="122" cy="80" r="6" fill="var(--ink)"/><text x="112" y="104" text-anchor="middle">南京</text>
+    <circle cx="448" cy="126" r="4" fill="var(--d1)"/><text x="466" y="122" font-size="11" font-weight="600">高崎机场</text>
+    <circle cx="404" cy="300" r="6" fill="var(--d2)"/><text x="386" y="292" text-anchor="end" font-size="13">潮州古城</text>
+    <circle cx="372" cy="318" r="5" fill="var(--d2)"/><text x="368" y="336" text-anchor="middle" font-size="11" font-weight="600">潮汕站</text>
+    <circle cx="470" cy="378" r="6" fill="var(--d3)"/><text x="486" y="410" font-size="13">汕头</text>
+    <circle cx="544" cy="334" r="4" fill="var(--d4)"/><text x="528" y="352" text-anchor="middle" font-size="10.5" font-weight="600">宫前大圆</text>
+    <circle cx="584" cy="306" r="4" fill="var(--d4)"/><text x="590" y="296" text-anchor="middle" font-size="10.5" font-weight="600">青澳湾</text>
+    <circle cx="326" cy="258" r="5" fill="var(--d5)"/><text x="316" y="250" text-anchor="end" font-size="11" font-weight="600">揭阳机场</text>
+    <circle cx="412" cy="152" r="4" fill="var(--d1)"/><text x="400" y="176" text-anchor="end" font-size="10.5" font-weight="600">环岛路·厦大圈</text>
+    <circle cx="442" cy="388" r="4" fill="var(--d3)"/><text x="430" y="404" text-anchor="middle" font-size="10.5" font-weight="600">小公园</text>
+  </g>
+  <g font-size="11.5" font-weight="700" fill="var(--accent)">
+    <text x="470" y="146" transform="rotate(2 470 146)">🛏 D1晚·厦门</text>
+    <text x="342" y="290" text-anchor="end" transform="rotate(-2 342 290)">🛏 D2晚·潮州</text>
+    <text x="500" y="398">🛏 D3–D4晚·汕头(2晚)</text>
+  </g>
+</svg>
+<div class="legend">
+  <span><i style="background:var(--d1)"></i>D1 厦门</span>
+  <span><i style="background:var(--d2)"></i>D2 高铁进潮州</span>
+  <span><i style="background:var(--d3)"></i>D3 潮州→汕头</span>
+  <span><i style="background:var(--d4)"></i>D4 南澳岛</span>
+  <span><i style="background:var(--d5)"></i>D5 返程</span>
+</div>
+<div class="cap">✋ 手绘示意 · 不按比例 · 点位为大致位置，精确导航请点逐日行程里各地点</div>
+</div>
+
+<!-- ================= 叁 · 已确认预订 ================= -->
+<div class="sec" id="sec-book"><span class="secno">叁</span><h2>已确认预订</h2></div>
+<div class="card">
+  <div class="grp">✈️ 机票 <small>· 双程</small></div>
+  <div class="fl">
+    <div class="fl-head"><span class="no">ZH9571 去程 · 深圳航空</span><span class="pill ok">已出票</span><span class="dt">11/26 周四</span></div>
+    <div class="fl-row">
+      <div class="fl-side"><div class="fl-big">07:00</div><div class="fl-air">南京禄口 T2</div></div>
+      <div class="fl-mid"><div class="fl-dash">— — ✈ — —</div><div class="fl-dur">约 1h50m</div></div>
+      <div class="fl-side"><div class="fl-big">08:50</div><div class="fl-air">厦门高崎 T4</div></div>
+    </div>
+    <div class="fl-note">清晨航班：建议 <b>05:30 前</b>到 T2 值机（凌晨 4:30 前后起床）· 落地地铁 1 号线直达酒店约 40m · 落地后是完整一天</div>
+  </div>
+  <div class="fl">
+    <div class="fl-head"><span class="no">ZH8554 回程 · 深圳航空</span><span class="pill ok">已出票</span><span class="dt">11/30 周一</span></div>
+    <div class="fl-row">
+      <div class="fl-side"><div class="fl-big">18:10</div><div class="fl-air">揭阳潮汕</div></div>
+      <div class="fl-mid"><div class="fl-dash">— — ✈ — —</div><div class="fl-dur">约 1h55m</div></div>
+      <div class="fl-side"><div class="fl-big">20:05</div><div class="fl-air">南京禄口 T2</div></div>
+    </div>
+    <div class="fl-note">值机截止 <b>17:40</b> · G1172 16:01 直达机场站，余量约 1.5h · 按 14:15 离开酒店倒推全天</div>
+  </div>
+
+  <div class="grp">🚄 高铁 <small>· 3 段 · 均经潮汕站</small></div>
+  <div class="fl">
+    <div class="fl-head"><span class="no">G921 · 厦门站 → 潮汕站</span><span class="pill grey">已定车次</span><span class="dt">11/27 周五</span></div>
+    <div class="fl-note"><b>10:15 发 → 11:50 到</b>（约 1h35m · 二等座 ¥97，以 12306 为准）· 注意是<b>厦门站</b>（火车站），就在宜必思酒店旁步行可到 · 未购票记得尽早在 12306 下单</div>
+  </div>
+  <div class="fl">
+    <div class="fl-head"><span class="no">D7437 · 潮汕站 → 汕头站</span><span class="pill grey">已定车次</span><span class="dt">11/28 周六</span></div>
+    <div class="fl-note"><b>15:49 发 → 16:15 到</b>（约 26m · 约 ¥30）· K2 务必最晚 13:45 前从南桥市场上车（提前 1.5–2h 纪律）</div>
+  </div>
+  <div class="fl">
+    <div class="fl-head"><span class="no">G1172 · 汕头站 → 揭阳机场站</span><span class="pill grey">已定车次</span><span class="dt">11/30 周一</span></div>
+    <div class="fl-note"><b>15:27 发 → 16:01 直达揭阳机场站</b>（机场高铁站就在航站楼旁，无需换接驳）· 15:50 过潮汕站 · 值机截止 17:40，余量约 1.5h · <b>潮汕站 ≠ 汕头站 ≠ 潮州站</b></div>
+  </div>
+
+  <div class="grp">🛏️ 酒店 <small>· 4 晚 3 店</small></div>
+  <div class="fl">
+    <div class="fl-head"><span class="no">宜必思 · 厦门火车站万象城店</span><span class="pill grey">11/26 晚</span></div>
+    <div class="fl-note">思明区厦禾路870号 · ☎ 0592-5176111 · 14:00 后入住 · 地铁 1 号线直达，站 230m</div>
+  </div>
+  <div class="fl">
+    <div class="fl-head"><span class="no">如家商旅(金标) · 潮州古城牌坊街店</span><span class="pill grey">11/27 晚</span></div>
+    <div class="fl-note">湘桥区开元路188号 · ☎ 0768-2325666 · 距西马路美食街 160m</div>
+  </div>
+  <div class="fl">
+    <div class="fl-head"><span class="no">海友 · 汕头万象城龙眼南路店</span><span class="pill grey">11/28–29 晚 · 连住 2 晚</span></div>
+    <div class="fl-note">龙湖区金砂东路102号 · ☎ 0754-88593888 · 全自助入住 · 楼下 105路直达南澳</div>
+  </div>
+
+  <div class="grp">⛴️ 岛上交通 <small>· 全程不租汽车</small></div>
+  <div class="fl">
+    <div class="fl-head"><span class="no">161K 大桥公交（Plan A 主案）</span><span class="pill grey">11/29</span></div>
+    <div class="fl-note">汕头站 5 号站台 → 南澳环城东路总站 · <b>07:00–18:40</b> · 全程 ¥12 · 约 70m · 不受停航影响 · 备选 105 路（约 1.5–2h）</div>
+  </div>
+  <div class="fl">
+    <div class="fl-head"><span class="no">南澳电动车（后宅镇）</span><span class="pill grey">11/29 当天</span></div>
+    <div class="fl-note">约 ¥60–100/天 · 两人一车 · <b>必须戴头盔</b> · 验车：拍车身视频 / 试刹车 / 续航 ≥70km · 还车拍码表留证</div>
+  </div>
+  <div class="fl">
+    <div class="fl-head"><span class="no">莱长轮渡（体验备选 Plan B）</span><span class="pill grey">如想坐船</span></div>
+    <div class="fl-note">莱芜→长山尾 每天<b>仅 09:00 / 15:00</b> 两班（返程 10:00 / 16:00）· 限载 90 人 · 大风大雾停航 · ☎ 0754-85500214（莱芜）/ 0754-86806393（长山尾）</div>
+  </div>
+
+  <div class="grp">🎟️ 门票与预约</div>
+  <div class="fl">
+    <div class="fl-head"><span class="no">厦门大学</span><span class="pill warn">⚡ 需提前预约</span></div>
+    <div class="fl-note">「U厦大」小程序 · 白城校门进 · 名额紧张，放票即约</div>
+  </div>
+  <div class="fl">
+    <div class="fl-head"><span class="no">钟鼓索道</span><span class="pill warn">⚡ 需提前订</span></div>
+    <div class="fl-note">11/26 日落场 · 全程约 40m</div>
+  </div>
+  <div class="fl">
+    <div class="fl-head"><span class="no">广济桥 · 广场轮渡</span><span class="pill grey">现场购</span></div>
+    <div class="fl-note">广济桥 11/28 东侧进桥需门票 · 广场轮渡 ¥1–2</div>
+  </div>
+</div>
+
+<!-- ================= 肆 · 逐日行程 ================= -->
+<div class="sec" id="sec-days"><span class="secno">肆</span><h2>逐日行程</h2></div>
+
+<details class="day" id="d1">
+  <summary><div class="dgrid">
+    <div class="dbadge" style="background:var(--d1)">D1</div>
+    <div><div class="dmeta">11/26 周四 · 住 厦门</div><div class="dtitle">南京 → 厦门 · 环岛路 + 厦大圈</div><div class="dsub">✈ ZH9571 07:00→08:50 · BRT进城 · 索道日落</div></div>
+    <div class="darrow">▶</div>
+  </div></summary>
+  <div class="inner">
+    <details class="daymap"><summary>当日路线图</summary><div id="map-d1"></div></details>
+    <div class="wx" id="wx-1">🌤️ <b>11/26 厦门</b> · 天气获取中…</div>
+    <div class="tl">
+      <div class="seg"><div class="seg-time">04:30<br>起床</div><div class="seg-body">
+        <div class="seg-name">✈️ ZH9571 · 南京禄口 T2 → 厦门高崎 T4</div>
+        <div class="acts"><div class="act"><div class="a-note">07:00 起飞 · 08:50 落地 · 建议 05:30 前到 T2 · 无餐食，早饭自带</div><span class="pill ok">已出票</span></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">09:10–<br>10:15</div><div class="seg-body">
+        <div class="seg-name">🚌 BRT 快2线 → 厦门火车站</div>
+        <div class="acts"><div class="act"><div class="a-note"><b>国内到达层 7 号门</b>出 → 步行至 BRT 高崎机场站 → 快2线约 45m · 省去地铁换乘</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">10:20</div><div class="seg-body">
+        <div class="seg-name">🚶 步行至酒店 · 寄存行李</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d1" data-i="1">宜必思 · 厦门火车站万象城店</a><div class="a-note">思明区厦禾路870号 · ☎ 0592-5176111 · 出站步行约 230m · 14:00 后入住</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">10:40–<br>12:00</div><div class="seg-body">
+        <div class="seg-name">🌊 音乐广场 · 环岛路海边</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d1" data-i="2">音乐广场</a><div class="a-note">酒店打车约 15m · 海堤步道随手出片</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">12:00–<br>13:30</div><div class="seg-body">
+        <div class="seg-name">🍽️ 午餐 · WANNA 望那儿落日峡谷海景餐吧</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d1" data-i="3">WANNA·望那儿落日峡谷海景餐吧</a><div class="a-note">环岛路海景位 · 建议提前订位 · 热门餐厅，饭点需排队</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">13:40–<br>14:30</div><div class="seg-body">
+        <div class="seg-name">🏖️ ④ 白城沙滩</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d1" data-i="4">白城沙滩</a><div class="a-note">从环岛路折返回白城 · 看海踩沙</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">14:30–<br>16:30</div><div class="seg-body">
+        <div class="seg-name">⑤ 厦门大学</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d1" data-i="5">厦门大学</a><div class="a-note">预约时段选 14:00–16:00 场次 · <b>从访客中心（新南门）专用通道入校</b>，非白城校门 · 入校后不能重复进出 · 主预约人带身份证原件</div><span class="pill warn">⚡ 唯一官方渠道 ·「厦门大学访客预约系统」公众号</span></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">16:30–<br>17:10</div><div class="seg-body">
+        <div class="seg-name">⑥ 南普陀寺</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d1" data-i="6">南普陀寺</a><div class="a-note">厦大西门出来即到 · 登寺俯瞰厦大全景</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">16:40–<br>17:50</div><div class="seg-body">
+        <div class="seg-name">🚡 ⑦ 钟鼓索道 · 山海日落</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d1" data-i="7">钟鼓索道</a><div class="a-note">南普陀西侧步行即到 · <b>17:30 停止检票上山</b>，16:40–17:00 抵达防排队 · 11 月底日落约 17:35 · 开放式吊椅，海边风大带外套</div><span class="pill warn">⚡ 日落场需提前订</span></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">18:00</div><div class="seg-body">
+        <div class="seg-name">🏨 回酒店办理入住 · 稍作休整</div>
+        <div class="acts"><div class="act"><div class="a-note">索道站打车约 10m 回酒店取房卡</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">18:30</div><div class="seg-body">
+        <div class="seg-name">🍲 晚餐 · 朱富贵火锅</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d1" data-i="8">朱富贵火锅(厦门火车站禹悦汇店)</a><div class="a-note">就在酒店旁禹悦汇商场 · 走路即到</div></div></div>
+      </div></div>
+      <div class="warnline">⚠️ 去程是清晨航班：11.25 晚早睡，行李前一晚收好；WANNA 建议提前订位，索道日落场提前订。体力不支的备选：音乐广场/白城沙滩可精简，优先保厦大 + 索道日落。</div>
+    </div>
+  </div>
+</details>
+
+<details class="day" id="d2">
+  <summary><div class="dgrid">
+    <div class="dbadge" style="background:var(--d2)">D2</div>
+    <div><div class="dmeta">11/27 周五 · 住 潮州古城</div><div class="dtitle">厦门 → 潮州 · 古城全天</div><div class="dsub">🚄 G921 10:15→11:50 · 过河拆桥 16:30 · 灯光秀 20:30</div></div>
+    <div class="darrow">▶</div>
+  </div></summary>
+  <div class="inner">
+    <details class="daymap"><summary>当日路线图</summary><div id="map-d2"></div></details>
+    <div class="wx" id="wx-2">🌤️ <b>11/27 潮州</b> · 天气获取中…</div>
+    <div class="tl">
+      <div class="seg"><div class="seg-time">09:15</div><div class="seg-body">
+        <div class="seg-name">🚶 退房 · 步行至厦门站（宜必思就在火车站旁）</div>
+        <div class="acts"><div class="act"><div class="a-note">09:35 前后进站 · 早餐酒店旁解决或站内买</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">10:15–<br>11:50</div><div class="seg-body">
+        <div class="seg-name">🚄 G921 · 厦门站 → 潮汕站</div>
+        <div class="acts"><div class="act"><div class="a-note">约 1h35m · 二等座 ¥97 · 到潮汕站 11:50</div><span class="pill grey">已定车次 · 记得购票</span></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">11:50–<br>13:00</div><div class="seg-body">
+        <div class="seg-name">🚌 潮州古城旅游专线 → 牌坊街南</div>
+        <div class="acts"><div class="act"><div class="a-note">¥15 · 约 45m · <b>带行李优先坐专线</b>（少绕站不易过站）· 替代 K2 快线 ¥10 · 60–70m · 收班晚，适合返程坐</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">13:00</div><div class="seg-body">
+        <div class="seg-name">🏨 步行至酒店办理入住</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d2" data-i="1">如家商旅 · 潮州古城牌坊街店</a><div class="a-note">湘桥区开元路188号 · ☎ 0768-2325666 · 备选：潮汕站直接打车到酒店约 40m，赶时间可用</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">13:00–<br>14:00</div><div class="seg-body">
+        <div class="seg-name">🍲 午餐 · 西马路牛肉火锅</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d2" data-i="2">西马路</a><div class="a-note">酒店步行 3 分钟 · 随便挑一家现切牛肉火锅都不踩雷</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">14:00–<br>16:00</div><div class="seg-body">
+        <div class="seg-name">🏛️ 开元寺 → 牌坊街慢逛</div>
+        <div class="acts">
+          <div class="act"><a class="pl" data-d="d2" data-i="3">开元寺</a><div class="a-note">粤东第一古刹 · 看唐代石经幢</div></div>
+          <div class="act"><a class="pl" data-d="d2" data-i="4">牌坊街</a><div class="a-note">22 座石牌坊 · 两侧骑楼老铺一路吃到头</div></div>
+        </div>
+      </div></div>
+      <div class="seg"><div class="seg-time">16:00–<br>17:00</div><div class="seg-body">
+        <div class="seg-name">⛵ 广济桥「过河拆桥」表演</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d2" data-i="5">广济桥</a><div class="a-note">16:30 场 · 看 18 艘梭船现场拆开让航道 · 提前 20m 从桥西（广济楼侧）上桥 · <b>看完从桥东下桥</b>，正好为明天韩文公祠方向铺垫 · 17:30 停止入园</div><span class="pill grey">需门票 · 现场购</span></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">17:15–<br>18:00</div><div class="seg-body">
+        <div class="seg-name">🥁 府城英歌舞体验馆</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d2" data-i="6">府城英歌舞体验馆</a><div class="a-note">古城内 · 看英歌舞、可化妆体验拍「中华战舞」照片</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">18:00–<br>19:30</div><div class="seg-body">
+        <div class="seg-name">🍢 晚餐 · 古城内小吃</div>
+        <div class="food"><b>吃：</b>鸭母捻 · 蚝烙 · 咸水粿 · 甘草水果 · 粿汁 · 腐乳饼 · 老香黄 · 粿条汤 —— 避开牌坊街主街网红店，钻旁边小巷</div>
+      </div></div>
+      <div class="seg"><div class="seg-time">20:30</div><div class="seg-body">
+        <div class="seg-name">🌉 广济桥灯光秀 · 滨江长廊观赏</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d2" data-i="7">滨江长廊</a><div class="a-note">桥体灯光 + 韩江水幕 · 场次以现场公告为准，提前 15m 占位</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">21:30</div><div class="seg-body">
+        <div class="seg-name">🌙 西马路夜宵</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d2" data-i="2">西马路</a><div class="a-note">白天没吃够的补上 · 回酒店睡觉</div></div></div>
+      </div></div>
+      <div class="warnline">⚠️ 明日转场：K2 务必比高铁发车时间提前 1.5–2h 乘坐（潮州粤运官方提示）。</div>
+    </div>
+  </div>
+</details>
+
+<details class="day" id="d3">
+  <summary><div class="dgrid">
+    <div class="dbadge" style="background:var(--d3)">D3</div>
+    <div><div class="dmeta">11/28 周六 · 住 汕头（连住2晚）</div><div class="dtitle">潮州韩江东岸 → 汕头开埠区</div><div class="dsub">🏛 上午东岸四点一线 · 🚄 D7437 15:49→16:15 · 傍晚小公园</div></div>
+    <div class="darrow">▶</div>
+  </div></summary>
+  <div class="inner">
+    <details class="daymap"><summary>当日路线图</summary><div id="map-d3"></div></details>
+    <div class="wx" id="wx-3">🌤️ <b>11/28 汕头</b> · 天气获取中…</div>
+    <div class="tl">
+      <div class="seg"><div class="seg-time">08:45–<br>12:00</div><div class="seg-body">
+        <div class="seg-name">行李寄存酒店 · 韩江东岸一线（时间充裕）</div>
+        <div class="acts">
+          <div class="act"><a class="pl" data-d="d3" data-i="0">① 青龙古庙</a><div class="a-note">古城南端江边 · 香火最旺</div></div>
+          <div class="act"><a class="pl" data-d="d3" data-i="1">② 泰佛殿（可舍弃备选）</a><div class="a-note">过韩江大桥稍绕 · 走累了直接跳过</div></div>
+          <div class="act"><a class="pl" data-d="d3" data-i="2">③ 韩文公祠（强烈推荐）</a><div class="a-note">登高拍广济桥全景最佳位</div></div>
+          <div class="act"><a class="pl" data-d="d3" data-i="3">④ 广济桥（东侧进桥）</a><div class="a-note">从韩文公祠一侧上桥走回古城 · 中午前人少</div><span class="pill grey">需门票 · 现场购</span></div>
+        </div>
+      </div></div>
+      <div class="seg"><div class="seg-time">12:00–<br>13:00</div><div class="seg-body">
+        <div class="seg-name">🍜 南桥市场附近午餐 → 取行李</div>
+        <div class="acts"><div class="act"><div class="a-note">回酒店取行李，步行至南桥市场上车点</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">13:45 前</div><div class="seg-body">
+        <div class="seg-name">🚌 K2 / 旅游专线 → 潮汕站（硬性红线）</div>
+        <div class="acts"><div class="act"><div class="a-note">¥10 · 60–70m · D7437 15:49 发车，K2 最晚 13:45 从南桥市场坐车 · 今天是周六，白天堵车概率高，<b>不卡点、宁可早到候车</b></div><span class="pill warn">提前 1.5–2h 纪律</span></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">15:49</div><div class="seg-body">
+        <div class="seg-name">🚄 D7437 · 潮汕站 → 汕头站</div>
+        <div class="acts"><div class="act"><div class="a-note">16:15 到 · 约 26m · 约 ¥30</div><span class="pill grey">已定车次 · 记得购票</span></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">16:45</div><div class="seg-body">
+        <div class="seg-name">🏨 海友 · 汕头万象城龙眼南路店 入住（连住 2 晚）</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d3" data-i="6">海友酒店</a><div class="a-note">龙湖区金砂东路102号 · ☎ 0754-88593888 · 楼下 105路直达南澳</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">17:00–<br>18:30</div><div class="seg-body">
+        <div class="seg-name">傍晚 · 开埠区（光线正好出片）</div>
+        <div class="acts">
+          <div class="act"><a class="pl" data-d="d3" data-i="7">小公园开埠区</a><div class="a-note">骑楼群 · 汕头旅社 · 百货大楼</div></div>
+          <div class="act"><a class="pl" data-d="d3" data-i="8">西堤公园</a><div class="a-note">步行 10m · 内海湾暮色（日落约 17:45，赶到就看得到）</div></div>
+        </div>
+      </div></div>
+      <div class="seg"><div class="seg-time">晚</div><div class="seg-body">
+        <div class="seg-name">🍢 万象城 / 龙眼南路美食街（广场轮渡挪到明天/看体力）</div>
+        <div class="acts"><div class="act"><div class="a-note">今晚<b>简单吃即可</b>，龙眼南路留给 D4 晚上回来深度吃 · 生腌肠胃敏感少量尝，配醋</div></div></div>
+        <div class="food"><b>吃：</b>牛肉火锅 · 粿汁 · 鲎粿 · 生腌 · 夜粥 · 猪肠胀糯米 · 卤鹅</div>
+      </div></div>
+    </div>
+  </div>
+</details>
+
+<details class="day" id="d4">
+  <summary><div class="dgrid">
+    <div class="dbadge" style="background:var(--d4)">D4</div>
+    <div><div class="dmeta">11/29 周日 · 住 汕头</div><div class="dtitle">南澳岛 · 公交过桥 + 电动车南岸线</div><div class="dsub">🚌 Plan A：161K 过大桥 · 🛵 环岛南路骑行 · 晚餐六份土鸡火锅</div></div>
+    <div class="darrow">▶</div>
+  </div></summary>
+  <div class="inner">
+    <details class="daymap"><summary>当日路线图</summary><div id="map-d4"></div></details>
+    <div class="wx" id="wx-4">🌤️ <b>11/29 南澳岛</b> · 天气获取中…</div>
+    <div class="tl">
+      <div class="seg"><div class="seg-time">07:30</div><div class="seg-body">
+        <div class="seg-name">⏰ 起床早餐</div>
+        <div class="acts"><div class="act"><div class="a-note">Plan A 主案：公交过大桥上岛，不受轮渡停航影响</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">08:00–<br>09:30</div><div class="seg-body">
+        <div class="seg-name">🚌 打车至汕头站 → 161K 过南澳大桥上岛</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d4" data-i="1">汕头站 · 5号公交站台</a><div class="a-note">161K 首班 07:00 · 全程 ¥12 · 约 70m 到南澳环城东路总站（县城）· 过大桥时坐左侧看海 · 备选 105 路约 1.5–2h</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">09:30–<br>10:00</div><div class="seg-body">
+        <div class="seg-name">🛵 后宅镇租电动车 · 验车</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d4" data-i="2">南澳宫前大圆</a><div class="a-note"><b>当场拍车身视频 · 试刹车 · 确认续航 ≥70km · 两人一车必须戴头盔</b> · 约 ¥60–100/天</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">10:00–<br>11:00</div><div class="seg-body">
+        <div class="seg-name">🛵 骑行南岸线 · 环岛南路 → 青澳湾（约 13km）</div>
+        <div class="acts"><div class="act"><div class="a-note">沿途钱澳湾灯塔 · 海滩停停拍拍 · 风大防风外套</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">11:00–<br>15:00</div><div class="seg-body">
+        <div class="seg-name">🏖️ 青澳湾 · 北回归线广场 · 自然之门</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d4" data-i="3">北回归线广场 · 青澳湾</a><div class="a-note">沙滩 + 标志塔打卡 · 午餐青澳湾周边大排档 · 电瓶车锁好停指定区</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">15:00–<br>16:00</div><div class="seg-body">
+        <div class="seg-name">🛵 骑行返程 → 后宅还车</div>
+        <div class="acts"><div class="act"><div class="a-note">还车时拍码表/车身照片留证 · 16:00 前完成，留出公交余量</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">16:15–<br>17:15</div><div class="seg-body">
+        <div class="seg-name">🚌 105 路 → 六份（公交站）</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d4" data-i="4">六份(公交站)</a><div class="a-note">105 经澄海 324 国道到六份 · 161K 不经六份，若赶不上就 161K 回汕头站再打车</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">17:15</div><div class="seg-body">
+        <div class="seg-name">🍲 晚餐 · 创意土鸡火锅（六份）</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d4" data-i="5">创意土鸡火锅(六份)</a><div class="a-note">六份站附近 · 当地人排队的土鸡火锅</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">19:00–<br>20:00</div><div class="seg-body">
+        <div class="seg-name">🚌 105 路 → 海友酒店休息</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d4" data-i="6">海友酒店</a><div class="a-note">105 往汕头约 20:30 末班 · 回到酒店如还有兴致，龙眼南路夜粥收尾</div></div></div>
+      </div></div>
+      <div class="warnline">⚠️ Plan B（轮渡体验，可选替换）：莱芜→长山尾每天仅 09:00 / 15:00 两班、限载 90 人、大风大雾停航——想坐船就 08:00 前到莱芜码头排队，且 11.28 晚电话 0754-85500214 确认开航；停航或满员，立即执行本页 Plan A。岛内公交 601/602 班次间隔 30–60m，只作电动车坏车时的备选。</div>
+    </div>
+  </div>
+</details>
+
+<details class="day" id="d5">
+  <summary><div class="dgrid">
+    <div class="dbadge" style="background:var(--d5)">D5</div>
+    <div><div class="dmeta">11/30 周一 · 返南京</div><div class="dtitle">礐石山收尾 → 揭阳机场</div><div class="dsub">⛴️ 广场轮渡 · 🚡 礐石塔山往返索道 · G1172 15:27 → 机场站 16:01</div></div>
+    <div class="darrow">▶</div>
+  </div></summary>
+  <div class="inner">
+    <details class="daymap"><summary>当日路线图</summary><div id="map-d5"></div></details>
+    <div class="wx" id="wx-5">🌤️ <b>11/30 汕头</b> · 天气获取中…</div>
+    <div class="tl">
+      <div class="seg"><div class="seg-time">09:00</div><div class="seg-body">
+        <div class="seg-name">退房 · 行李寄存酒店</div>
+      </div></div>
+      <div class="seg"><div class="seg-time">09:30–<br>10:10</div><div class="seg-body">
+        <div class="seg-name">🌊 观海长廊 → 潮人码头</div>
+        <div class="acts">
+          <div class="act"><a class="pl" data-d="d5" data-i="1">观海长廊</a><div class="a-note">酒店步行约 10m · 海滨路晨景</div></div>
+          <div class="act"><a class="pl" data-d="d5" data-i="2">潮人码头</a><div class="a-note">长廊西段 · 打卡后接着走到广场轮渡</div></div>
+        </div>
+      </div></div>
+      <div class="seg"><div class="seg-time">10:20</div><div class="seg-body">
+        <div class="seg-name">⛴️ 广场轮渡 → 礐石轮渡码头</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d5" data-i="3">广场轮渡</a><div class="a-note">¥1–2 · 约 10m · 船上看内海湾天际线</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">10:40–<br>13:20</div><div class="seg-body">
+        <div class="seg-name">⛰️ 礐石塔山 · 往返索道</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d5" data-i="4">塔山景区售票处</a><div class="a-note">乘往返索道上山 · 飘然亭/垂虹洞俯瞰汕头内海湾全景 · 午餐景区简餐或打包轻食</div><span class="pill warn">⚡ 索道开放时间出发前电话确认</span></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">13:30–<br>14:00</div><div class="seg-body">
+        <div class="seg-name">⛴️ 索道下山 → 礐石轮渡码头 → 广场轮渡返程</div>
+        <div class="acts"><div class="act"><div class="a-note">13:45 必须踏上返程轮渡 · 广场轮渡约 20m 一班</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">14:00–<br>14:15</div><div class="seg-body">
+        <div class="seg-name">🧳 海友酒店取行李</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d5" data-i="5">海友酒店</a><div class="a-note">取行李后直接出发，不留缓冲</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">14:15</div><div class="seg-body">
+        <div class="seg-name">🚕 打车 → 汕头站</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d5" data-i="6">汕头站</a><div class="a-note">打网约车约 15m · <b>14:40 前抵达安检候车</b>，别卡 15:27 的点</div><span class="pill warn">⚡ G1172 记得购票（12306）</span></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">15:27–<br>16:01</div><div class="seg-body">
+        <div class="seg-name">🚄 G1172 · 汕头站 → 揭阳机场站</div>
+        <div class="acts"><div class="act"><div class="a-note">34m 直达 · 15:50 过潮汕站不停靠上下（坐到揭阳机场站再下）· 机场高铁站与航站楼步行连通</div><span class="pill grey">已定车次</span></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">16:10<br>前后</div><div class="seg-body">
+        <div class="seg-name">🛫 步行进航站楼 · 值机托运</div>
+        <div class="acts"><div class="act"><a class="pl" data-d="d5" data-i="7">揭阳潮汕国际机场</a><div class="a-note">值机截止 17:40 · 到达后余量约 1.5h，从容</div></div></div>
+      </div></div>
+      <div class="seg"><div class="seg-time">18:10</div><div class="seg-body">
+        <div class="seg-name">✈️ ZH8554 · 揭阳潮汕 → 南京禄口 T2</div>
+        <div class="acts"><div class="act"><div class="a-note">20:05 落地 · 约 1h55m · 有餐食</div><span class="pill ok">已出票</span></div></div>
+      </div></div>
+      <div class="warnline">⚠️ 索道遇大风会临时停运（公众号「汕头英特纳索道塔山在线」查状态），周一正常开放 · 13:45 必须踏上返程轮渡 · 体力备选：D4 岛上玩完太累，就放弃索道，改观海长廊散步 + 买手信，直接提前去汕头站。</div>
+    </div>
+  </div>
+</details>
+
+<!-- ================= 伍 · 待办清单 ================= -->
+<div class="sec" id="sec-todo"><span class="secno">伍</span><h2>待办清单</h2></div>
+<div class="card">
+<ul class="todo">
+  <li><span class="td-name">12306 购 3 段高铁：G921 / D7437 / G1172</span> <span class="pill">尽快</span><div class="td-note">G921 厦门站 10:15 · D7437 潮汕站 15:49 · G1172 汕头站 15:27 → 揭阳机场站 16:01</div></li>
+  <li><span class="td-name">「厦门大学访客预约系统」公众号预约 11.26 时段</span> <span class="pill warn">放号即抢</span><div class="td-note">唯一官方渠道 · 提前 1–3 日，每日 8:00 / 12:00 / 16:00 放号，额满即止 · 工作日仅 2000 人/天 · 主预约人带身份证原件 · 从访客中心（新南门）入校</div></li>
+  <li><span class="td-name">钟鼓索道 11.26 日落场购票</span> <span class="pill">11.26 前</span><div class="td-note">日落约 17:35 · <b>17:30 停止检票</b> · 建议 16:40–17:00 抵达</div></li>
+  <li><span class="td-name">南澳预案存手机（D4 用）</span> <span class="pill">出发前</span><div class="td-note">默认 Plan A：161K 公交过桥 + 电动车 · 若想坐轮渡，11.28 晚电话 ☎ 0754-85500214 确认开航（限 90 人/班，停航满员即 Plan A）· 电动车当场拍视频验车</div></li>
+  <li><span class="td-name">电话确认礐石索道 11.30（周一）开放</span> <span class="pill">出发前</span><div class="td-note">公众号「汕头英特纳索道塔山在线」查状态 · 停运就改步道或海滨休闲</div></li>
+  <li><span class="td-name">开通厦门 / 潮州 / 汕头乘车码</span> <span class="pill">出发前</span><div class="td-note">公交全支持乘车码 · 备少量现金（161K 无卡投币）</div></li>
+  <li><span class="td-name">11.25 晚早睡：D1 是清晨航班</span> <span class="pill warn">11.25</span><div class="td-note">凌晨 4:30 前后起床 · 05:30 前到禄口 T2 · 行李前一晚收好</div></li>
+  <li><span class="td-name">出发前 3 天看天气，收拾薄外套</span> <span class="pill">出发前</span><div class="td-note">15–25℃ 早晚凉 · 南澳海边防晒防风 · 骑行防风外套</div></li>
+</ul>
+</div>
+
+<!-- ================= 陆 · 实用贴士 ================= -->
+<div class="sec" id="sec-tips"><span class="secno">陆</span><h2>实用贴士</h2></div>
+<div class="card">
+  <div class="tipgrp"><div class="tg">🚉 车站名 · 别坐错</div><p>四个名字极易混淆：<b>厦门站 ≠ 厦门北站</b>（G921 厦门站发车）；<b>潮汕站 ≠ 潮州站 ≠ 汕头站 ≠ 揭阳机场站</b>——去潮州古城在「潮汕站」下转 K2 / 旅游专线，别坐到潮州站；返程 G1172 <b>坐到「揭阳机场站」下</b>，别在潮汕站下，否则要额外打车去机场。161K 在汕头站 5 号公交站台乘车。</p></div>
+  <div class="tipgrp"><div class="tg">🚌 公交 · 末班纪律</div><p>汕头全域没有地铁，公交 / 打车为主；K2 快线 20:20 后班次终点为韩山师院，仍经停牌坊街南；<b>南澳大桥行人、电动车不能直接上桥</b>，只有大桥公交（161K/105）或轮渡载车上岛；回程 105 往汕头约 20:30 末班，莱长轮渡每天仅 4 班 —— <b>一切赶早</b>。</p></div>
+  <div class="tipgrp"><div class="tg">🎫 门票 · 预约</div><p>广济桥灯光秀场次以现场广播为准，网络时间仅供参考，滨江长廊提前占位；上桥需门票，11.28 从东侧（韩文公祠一侧）进；厦大预约名额紧张（工作日仅 2000 人/天），<b>放号即抢</b>；揭阳机场站与航站楼步行连通，出站按指示牌走即可。</p></div>
+  <div class="tipgrp"><div class="tg">🛍️ 手信 · 别在景区买</div><p>单丛茶 · 老香黄 · 绿豆饼 · 猪肉脯 —— 汕头本地市场比景区便宜；牛肉火锅点菜认准吊龙 / 肥胼 / 匙柄，别盲目点多。</p></div>
+  <div class="tipgrp"><div class="tg">🌤 穿衣</div><p>11 月底潮汕 15–25℃，早晚凉，<b>薄外套</b>必备；南澳海边风大，防晒防风；骑行穿防风外套。</p></div>
+  <div class="tipgrp"><div class="tg">💰 预算参考</div><p>人均（不含机票）：城际交通 ¥300–400 · 住宿 ¥1200–2000 · 餐饮 ¥600–800。</p></div>
+  <div class="tipgrp"><div class="tg">📶 离线与支付</div><p>本页零外部依赖，<b>离线也能看</b>；公交全支持乘车码，备少量现金；地图点位为大致位置，精确导航请点行程里各地点名称。</p></div>
+</div>
+
+<div class="foot">潮汕 5 日 · 2026.11.26 – 11.30 · 手绘地图不按比例，仅示意</div>
+</div>
+
+<script>
+/* ===== 数据（GCJ-02 坐标，与行程对应） ===== */
+var NAV = {
+  d1:{mode:'car',color:'var(--d1)',pts:[
+    {n:'厦门高崎国际机场T4候机楼',la:24.5320,ln:118.1277},
+    {n:'宜必思酒店(厦门火车站万象城店)',la:24.4757,ln:118.1180,h:1},
+    {n:'音乐广场',la:24.4390,ln:118.1140},
+    {n:'WANNA望那儿落日峡谷海景餐吧',la:24.4380,ln:118.1400},
+    {n:'白城沙滩',la:24.4338,ln:118.1043},
+    {n:'厦门大学',la:24.4348,ln:118.0995},
+    {n:'南普陀寺',la:24.4418,ln:118.0964},
+    {n:'钟鼓索道',la:24.4470,ln:118.0935},
+    {n:'朱富贵火锅(禹悦汇店)',la:24.4760,ln:118.1170}]},
+  d2:{mode:'walk',color:'var(--d2)',pts:[
+    {n:'潮汕站',la:23.6277,ln:116.5859},
+    {n:'如家商旅(潮州古城牌坊街店)',la:23.6620,ln:116.6470,h:1},
+    {n:'西马路',la:23.6620,ln:116.6435},
+    {n:'潮州开元寺',la:23.6645,ln:116.6470},
+    {n:'牌坊街',la:23.6625,ln:116.6485},
+    {n:'广济桥',la:23.6646,ln:116.6555},
+    {n:'府城英歌舞体验馆',la:23.6620,ln:116.6500},
+    {n:'滨江长廊',la:23.6640,ln:116.6545}]},
+  d3:{mode:'car',color:'var(--d3)',pts:[
+    {n:'青龙古庙',la:23.6535,ln:116.6420},
+    {n:'泰佛殿',la:23.6660,ln:116.6730},
+    {n:'韩文公祠',la:23.6689,ln:116.6770},
+    {n:'广济桥',la:23.6650,ln:116.6560},
+    {n:'潮汕站',la:23.6277,ln:116.5859},
+    {n:'汕头站',la:23.3519,ln:116.7327},
+    {n:'海友酒店(汕头万象城龙眼南路店)',la:23.3655,ln:116.7160,h:1},
+    {n:'小公园历史开埠区',la:23.3535,ln:116.6790},
+    {n:'西堤公园',la:23.3470,ln:116.6740},
+    {n:'广场轮渡',la:23.3490,ln:116.6810}]},
+  d4:{mode:'car',color:'var(--d4)',pts:[
+    {n:'海友酒店(汕头万象城龙眼南路店)',la:23.3655,ln:116.7160,h:1},
+    {n:'汕头站(5号公交站台)',la:23.3519,ln:116.7327},
+    {n:'南澳宫前大圆',la:23.4240,ln:116.9890},
+    {n:'北回归线广场·青澳湾',la:23.4375,ln:117.0885},
+    {n:'六份(公交站)',la:23.4555,ln:116.8100},
+    {n:'创意土鸡火锅(六份)',la:23.4560,ln:116.8080},
+    {n:'海友酒店(汕头万象城龙眼南路店)',la:23.3655,ln:116.7160}]},
+  d5:{mode:'car',color:'var(--d5)',pts:[
+    {n:'海友酒店(汕头万象城龙眼南路店)',la:23.3655,ln:116.7160,h:1},
+    {n:'观海长廊',la:23.3520,ln:116.6960},
+    {n:'潮人码头',la:23.3510,ln:116.6855},
+    {n:'广场轮渡',la:23.3490,ln:116.6810},
+    {n:'礐石塔山景区(索道售票处)',la:23.3280,ln:116.6800},
+    {n:'海友酒店(取行李)',la:23.3655,ln:116.7160},
+    {n:'汕头站',la:23.3519,ln:116.7327},
+    {n:'揭阳潮汕国际机场',la:23.5624,ln:116.5936}]}
+};
+
+/* ===== 倒计时 ===== */
+var EVENTS = [
+  {t:'2026-11-26T07:00:00+08:00', name:'D1 · 11/26 · ✈️ ZH9571 南京禄口 → 厦门高崎', hint:'07:00 起飞 · 08:50 落地 T4 · 凌晨就得起身'},
+  {t:'2026-11-27T10:15:00+08:00', name:'D2 · 11/27 · 🚄 G921 厦门站 → 潮汕站', hint:'10:15 发车 · 11:50 到潮汕 · 酒店旁步行进站 · 下午古城全流程'},
+  {t:'2026-11-28T15:49:00+08:00', name:'D3 · 11/28 · 🚄 D7437 潮汕站 → 汕头站', hint:'15:49 发车 · 16:15 到汕头 · K2 最晚 13:45 前上车'},
+  {t:'2026-11-29T08:00:00+08:00', name:'D4 · 11/29 · 🚌 161K 公交过南澳大桥上岛', hint:'08:00 前到汕头站 5 号站台 · Plan A 主案 · 轮渡仅作体验备选'},
+  {t:'2026-11-30T15:27:00+08:00', name:'D5 · 11/30 · 🚄 G1172 汕头站 → 揭阳机场站', hint:'15:27 发车 · 16:01 直达机场站 · 14:15 离开酒店 · 18:10 起飞'},
+];
+function pad(x){return (x<10?'0':'')+x;}
+function tick(){
+  var now=Date.now(),ev=null,i;
+  for(i=0;i<EVENTS.length;i++){ if(new Date(EVENTS[i].t).getTime()>now){ev=EVENTS[i];break;} }
+  var grid=document.querySelector('.cd-grid');
+  if(!ev){
+    document.getElementById('cdname').textContent='🎉 行程已结束 · 一路平安到家';
+    document.getElementById('cdwhen').textContent='';
+    document.getElementById('cdhint').textContent='';
+    if(grid)grid.style.display='none'; return;
+  }
+  if(grid)grid.style.display='flex';
+  var d=new Date(ev.t),diff=Math.max(0,d.getTime()-now);
+  var dd=Math.floor(diff/86400000),hh=Math.floor(diff%86400000/3600000),mm=Math.floor(diff%3600000/60000),ss=Math.floor(diff%60000/1000);
+  document.getElementById('cdname').textContent=ev.name;
+  var wk='日一二三四五六'.charAt(d.getDay());
+  document.getElementById('cdwhen').textContent='2026年11月'+d.getDate()+'日（周'+wk+'）'+pad(d.getHours())+':'+pad(d.getMinutes());
+  document.getElementById('cdd').textContent=dd;
+  document.getElementById('cdh').textContent=pad(hh);
+  document.getElementById('cdm').textContent=pad(mm);
+  document.getElementById('cds').textContent=pad(ss);
+  document.getElementById('cdhint').textContent=ev.hint;
+}
+tick(); setInterval(tick,1000);
+
+/* ===== 导航链接 ===== */
+function pointUrl(mode,p){
+  return 'https://uri.amap.com/navigation?to='+p.ln+','+p.la+','+encodeURIComponent(p.n)+'&mode='+mode+'&coordinate=gaode&callnative=1&src=cs5d';
+}
+/* ===== 当日天气（Open-Meteo 免费接口 · 需联网 · 离线自动降级） ===== */
+var WXDAYS=[
+  {el:'wx-1',city:'厦门',date:'2026-11-26',la:24.4798,ln:118.0894},
+  {el:'wx-2',city:'潮州',date:'2026-11-27',la:23.6618,ln:116.6226},
+  {el:'wx-3',city:'汕头',date:'2026-11-28',la:23.3540,ln:116.6820},
+  {el:'wx-4',city:'南澳岛',date:'2026-11-29',la:23.4240,ln:116.9890},
+  {el:'wx-5',city:'汕头',date:'2026-11-30',la:23.3540,ln:116.6820}
+];
+function wxIcon(c){
+  if(c===0)return ['☀️','晴'];
+  if(c<=2)return ['🌤️','多云'];
+  if(c===3)return ['☁️','阴'];
+  if(c===45||c===48)return ['🌫️','雾'];
+  if(c>=51&&c<=57)return ['🌦️','毛毛雨'];
+  if(c>=61&&c<=67)return ['🌧️','雨'];
+  if(c>=71&&c<=77)return ['❄️','雪'];
+  if(c>=80&&c<=82)return ['🌦️','阵雨'];
+  if(c===85||c===86)return ['🌨️','阵雪'];
+  if(c>=95)return ['⛈️','雷阵雨'];
+  return ['🌤️','—'];
+}
+function loadWx(){
+  var k,d,el,url;
+  for(k=0;k<WXDAYS.length;k++){
+    d=WXDAYS[k];el=document.getElementById(d.el);
+    if(!el)continue;
+    url='https://api.open-meteo.com/v1/forecast?latitude='+d.la+'&longitude='+d.ln+
+        '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FShanghai&forecast_days=16';
+    (function(d,el,url){
+      fetch(url).then(function(r){return r.json();}).then(function(j){
+        var i=j.daily.time.indexOf(d.date),ic,txt;
+        if(i<0){el.innerHTML='<span class="wxic">🌤️</span><span><b>'+d.date+' '+d.city+'</b> · 超出预报窗口 · 以当地实况为准</span>';return;}
+        ic=wxIcon(j.daily.weather_code[i]);
+        txt='<b>'+d.date+' '+d.city+'</b> · '+ic[1]+' · '+Math.round(j.daily.temperature_2m_min[i])+'~'+Math.round(j.daily.temperature_2m_max[i])+'℃';
+        if(j.daily.precipitation_probability_max[i]!==null&&j.daily.precipitation_probability_max[i]!==undefined)txt+=' · 降水概率 '+j.daily.precipitation_probability_max[i]+'%';
+        el.innerHTML='<span class="wxic">'+ic[0]+'</span><span>'+txt+'</span>';
+      }).catch(function(){
+        el.innerHTML='<span class="wxic">📡</span><span class="wxerr">天气需联网获取 · 当前离线，出行前请查看当地预报</span>';
+      });
+    })(d,el,url);
+  }
+}
+loadWx();
+document.addEventListener('click',function(e){
+  var a=e.target.closest?e.target.closest('a.pl'):null;
+  if(!a)return;
+  e.preventDefault();
+  var i=parseInt(a.getAttribute('data-i'),10);window.open(pointUrl(NAV[a.getAttribute('data-d')].mode,NAV[a.getAttribute('data-d')].pts[i]),'_blank');
+});
+
+/* ===== 每日小地图 ===== */
+function drawMini(id){
+  var host=document.getElementById(id);
+  if(!host||!NAV[id])return;
+  var p=NAV[id].pts,W=340,H=200,pad=26,i,x=[],y=[];
+  var minLa=90,maxLa=-90,minLn=200,maxLn=-90;
+  for(i=0;i<p.length;i++){
+    if(p[i].la<minLa)minLa=p[i].la; if(p[i].la>maxLa)maxLa=p[i].la;
+    if(p[i].ln<minLn)minLn=p[i].ln; if(p[i].ln>maxLn)maxLn=p[i].ln;
+  }
+  var ra=(maxLa-minLa)||(0.0001),ro=(maxLn-minLn)||(0.0001);
+  for(i=0;i<p.length;i++){
+    x[i]=pad+(p[i].ln-minLn)/ro*(W-2*pad);
+    y[i]=H-pad-(p[i].la-minLa)/ra*(H-2*pad);
+  }
+  var s='<svg viewBox="0 0 '+W+' '+H+'" width="100%">';
+  s+='<path d="M'+x[0]+','+y[0];
+  for(i=1;i<p.length;i++){s+=' L'+x[i]+','+y[i];}
+  s+='" fill="none" stroke="'+NAV[id].color+'" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>';
+  for(i=0;i<p.length;i++){
+    if(p[i].h){
+      s+='<text x="'+x[i]+'" y="'+(y[i]-13)+'" font-size="12" text-anchor="middle" fill="'+NAV[id].color+'" font-weight="700">🛏 '+p[i].n.slice(0,6)+'</text>';
+      s+='<circle cx="'+x[i]+'" cy="'+y[i]+'" r="9" fill="'+NAV[id].color+'"/><text x="'+x[i]+'" y="'+(y[i]+4)+'" font-size="10" text-anchor="middle" fill="#fff" font-weight="700">★</text>';
+    }else{
+      s+='<circle cx="'+x[i]+'" cy="'+y[i]+'" r="9" fill="'+NAV[id].color+'"/><text x="'+x[i]+'" y="'+(y[i]+3.5)+'" font-size="9.5" text-anchor="middle" fill="#fff" font-weight="700">'+(i+1)+'</text>';
+    }
+  }
+  s+='<text x="'+(x[0]-14)+'" y="'+(y[0]+4)+'" font-size="11" text-anchor="end" fill="var(--ink-soft)">'+p[0].n.slice(0,5)+'</text>';
+  s+='<text x="'+(x[p.length-1]+14)+'" y="'+(y[p.length-1]+4)+'" font-size="11" fill="var(--ink-soft)">'+p[p.length-1].n.slice(0,5)+'</text>';
+  s+='</svg>';
+  host.innerHTML=s;
+}
+drawMini('map-d1');drawMini('map-d2');drawMini('map-d3');drawMini('map-d4');drawMini('map-d5');
+
+/* ===== 吸顶导航高亮 ===== */
+var SECS=['sec-now','sec-map','sec-book','sec-days','sec-todo','sec-tips'];
+function navHi(){
+  var y=window.scrollY+130,cur=SECS[0];
+  for(var i=0;i<SECS.length;i++){
+    var el=document.getElementById(SECS[i]);
+    if(el&&el.getBoundingClientRect().top+window.scrollY<=y)cur=SECS[i];
+  }
+  var links=document.querySelectorAll('nav a[data-sec]');
+  for(var j=0;j<links.length;j++){
+    links[j].classList.toggle('on',links[j].getAttribute('data-sec')===cur);
+  }
+}
+window.addEventListener('scroll',navHi,{passive:true});
+navHi();
+</script>
+</body>
+</html>
